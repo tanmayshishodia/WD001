@@ -24,6 +24,11 @@ app.config.update({
 docs = FlaskApiSpec(app)
 
 
+@app.route('/')
+def home():
+    return "Note taking application. Head to /swagger-ui"
+
+
 class ResponseSchema(Schema):
     title = fields.String(required=True)
     desc = fields.String(required=True)
